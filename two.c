@@ -2,9 +2,9 @@
 
 int main () {
 
-    int left = 4 ; 
+    int left = 11 ; 
     
-    int right = 10;
+    int right = 20;
 
     for ( int i = left ; i <= right ; i++ ){
 
