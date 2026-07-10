@@ -1,28 +1,31 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main() {
 
-    int left = 4;
-    int right = 10;
+    int n = 20;
 
-    for(int i = left; i <= right; i++) {
+    int prime[n + 1];
 
-        int prime = 1;
+    for (int i = 0; i <= n; i++)
+        prime[i] = 1;
 
-        if(i < 2)
-            continue;
+    prime[0] = prime[1] = 0;
 
-        for(int j = 2; j * j <= i; j++) {
+    for (int i = 2; i * i <= n; i++) {
 
-            if(i % j == 0) {
-                prime = 0;
-                break;
-            }
+        if (prime[i]) {
+
+            for (int j = i * i; j <= n; j += i)
+                prime[j] = 0;
+
         }
+    }
 
-        if(prime) {
+    for (int i = 2; i <= n; i++) {
+
+        if (prime[i])
             printf("%d ", i);
-        }
+
     }
 
     return 0;
