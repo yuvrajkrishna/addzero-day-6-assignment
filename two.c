@@ -1,35 +1,29 @@
 #include<stdio.h>
 
-int main () {
+int main() {
 
-    int left = 11 ; 
-    
-    int right = 20;
+    int left = 4;
+    int right = 10;
 
-    for ( int i = left ; i <= right ; i++ ){
+    for(int i = left; i <= right; i++) {
 
-        for( int j = 2 ; j < i ; j++ ){
+        int prime = 1;
 
-            if( i % j == 0 ){
+        if(i < 2)
+            continue;
+
+        for(int j = 2; j * j <= i; j++) {
+
+            if(i % j == 0) {
+                prime = 0;
                 break;
             }
-            else{
-                if(j == i -1){
-                    printf("%d ", i);
-                }
-                else{
-                    continue;
-                }
-            }
-
         }
 
-        
-
-        
-
+        if(prime) {
+            printf("%d ", i);
+        }
     }
 
-    return 0 ;
-
+    return 0;
 }
